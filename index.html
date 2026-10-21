@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دی‌ماهی جان، تولدت مبارک</title>
+<meta name="description" content="کارت پستال تبریک تولد دی‌ماهی‌ها">
+<meta property="og:title" content="دی‌ماهی جان، تولدت مبارک">
+<meta property="og:description" content="یه کارت پستال زمستونی، با آهنگ و برف، مخصوص تو">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/aref-ruqaa@5.0.8/arabic-700.css">
+<style>
+:root{
+  --night:#0c1530;--deep:#070d22;--snow:#f2f6fb;--frost:#9cc3e6;
+  --pom:#c8344f;--gold:#f4c95d;
+  --head:"Aref Ruqaa","Vazirmatn",Tahoma,serif;
+  --font:"Vazirmatn",Tahoma,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:var(--font);color:var(--snow);background:var(--deep);overflow:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+button,input{font-family:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* آسمان */
+.sky{position:fixed;inset:0;background:linear-gradient(180deg,#050a1c 0%,#0c1530 45%,#1b2d5b 80%,#2c4274 100%)}
+.aurora{position:absolute;left:-10%;right:-10%;top:-5%;height:55%;filter:blur(55px);opacity:.55;mix-blend-mode:screen;pointer-events:none}
+.aurora.a{background:radial-gradient(60% 70% at 30% 40%,#27e0c0 0%,transparent 70%);animation:drift 16s ease-in-out infinite alternate}
+.aurora.b{background:radial-gradient(55% 60% at 70% 30%,#7a5cff 0%,transparent 70%);animation:drift 21s ease-in-out -6s infinite alternate-reverse;opacity:.4}
+@keyframes drift{from{transform:translateX(-6%) scale(1)}to{transform:translateX(8%) scale(1.15)}}
+.stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{opacity:.15}}
+.shoot{position:absolute;top:12%;right:-10%;width:130px;height:2px;background:linear-gradient(90deg,transparent,#fff);transform:rotate(-205deg);opacity:0;animation:shoot 11s linear 3s infinite}
+@keyframes shoot{0%{opacity:0;transform:translate(0,0) rotate(-205deg)}2%{opacity:1}8%{opacity:0;transform:translate(-90vw,40vh) rotate(-205deg)}100%{opacity:0}}
+.moon{position:absolute;top:8vh;left:10vw;width:clamp(64px,10vw,124px);aspect-ratio:1;border-radius:50%;background:#f7f9ff;box-shadow:0 0 90px 18px rgba(156,195,230,.32)}
+.moon::after{content:"";position:absolute;inset:0;border-radius:50%;background:#0a1230;transform:translate(30%,-8%) scale(.86)}
+
+/* لایه‌های منظره با پارالاکس */
+.layer{position:fixed;left:-4%;width:108%;bottom:0;pointer-events:none}
+.layer svg{display:block;width:100%;height:100%}
+.l1{height:46vh;min-height:230px}
+.l2{height:40vh;min-height:200px}
+.l3{height:34vh;min-height:170px}
+.glow{animation:glow 3.2s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.65}to{opacity:1}}
+.smoke circle{fill:#dfe8f5;opacity:0;animation:smoke 5s ease-out infinite}
+.smoke circle:nth-child(2){animation-delay:1.7s}.smoke circle:nth-child(3){animation-delay:3.4s}
+@keyframes smoke{0%{opacity:.7;transform:translate(0,0) scale(.6)}100%{opacity:0;transform:translate(26px,-90px) scale(2)}}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}
+
+/* پاکت */
+.stage{position:fixed;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .8s ease .2s}
+.stage.gone{opacity:0;pointer-events:none}
+.env{position:relative;width:min(340px,82vw);aspect-ratio:3/2;cursor:pointer;perspective:1100px;transition:transform 1s ease,opacity .9s ease;animation:float 4s ease-in-out infinite;outline-offset:10px}
+@keyframes float{50%{transform:translateY(-8px)}}
+.env>*{position:absolute;display:block}
+.env .back{inset:0;z-index:1;border-radius:10px;background:linear-gradient(#aebfd9,#9db1d0);box-shadow:0 26px 60px rgba(0,0,0,.55)}
+.env .paper{left:7%;right:7%;top:8%;height:86%;z-index:3;border-radius:6px;text-align:center;padding-top:7%;color:#33466f;font-family:var(--head);background:linear-gradient(#fff,#edf2fa);box-shadow:0 -3px 14px rgba(0,0,0,.2);transition:transform .9s cubic-bezier(.3,.8,.3,1) .45s}
+.env .paper b{display:block;font-size:1.7rem;line-height:1.5}
+.env .paper i{display:block;font-style:normal;color:var(--pom);font-size:1.1rem;line-height:1.2}
+.env .front{inset:0;width:100%;height:100%;z-index:4;border-radius:10px;overflow:hidden}
+.env .flap{left:0;top:0;width:100%;height:54%;z-index:5;border-radius:10px 10px 0 0;overflow:hidden;transform-origin:top;transition:transform .7s ease,z-index 0s linear .35s,filter .7s}
+.env .seal{left:50%;top:54%;width:58px;height:58px;margin:-29px 0 0 -29px;z-index:6;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e8546d,#a82540);box-shadow:0 4px 12px rgba(0,0,0,.45),inset 0 -3px 6px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#ffd7de;transition:opacity .3s}
+.env .tap{left:0;right:0;bottom:-48px;text-align:center;color:var(--frost);font-size:1rem;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.4}}
+.stage.open .flap{transform:rotateX(180deg);z-index:2;filter:brightness(.9)}
+.stage.open .seal,.stage.open .tap{opacity:0}
+.stage.open .paper{transform:translateY(-46%)}
+.stage.open .env{animation:none}
+.stage.gone .env{transform:translateY(-30px) scale(1.12);opacity:0}
+
+/* کارت پستال */
+.card-wrap{position:fixed;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;padding:20px 20px 14vh;visibility:hidden}
+.card-wrap.show{visibility:visible}
+.card{position:relative;width:min(560px,100%);padding:clamp(28px,6vw,52px) clamp(22px,5vw,46px) 26px;text-align:center;border-radius:22px;
+  background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.25);box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.3);
+  backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);
+  opacity:0;transform:translateY(40px) scale(.94);transform-style:preserve-3d}
+.card::before{content:"";position:absolute;inset:10px;border:1px dashed rgba(255,255,255,.22);border-radius:14px;pointer-events:none}
+.card-wrap.show .card{animation:cardin 1.2s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes cardin{to{opacity:1;transform:none}}
+.stamp{position:absolute;top:-18px;left:22px;width:64px;padding:6px;background:var(--snow);transform:rotate(6deg);box-shadow:0 6px 16px rgba(0,0,0,.4);
+  -webkit-mask:radial-gradient(circle 4px at 6px 6px,#0000 98%,#000) -6px -6px/12px 12px;mask:radial-gradient(circle 4px at 6px 6px,#0000 98%,#000) -6px -6px/12px 12px}
+.stamp div{background:linear-gradient(160deg,#b52a45,#7d1830);height:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#ffe7ea;font-family:var(--head);line-height:1.2}
+.stamp b{font-size:1.5rem}.stamp span{font-size:.85rem}
+.mark{position:absolute;top:2px;left:62px;width:70px;height:70px;border:2px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:rgba(255,255,255,.55);transform:rotate(-14deg)}
+h1{font-family:var(--head);font-weight:700;font-size:clamp(2.3rem,9vw,4.4rem);line-height:1.55}
+h1 .w{display:inline-block;opacity:0;filter:blur(8px);transform:translateY(14px)}
+.card-wrap.show h1 .w{animation:word .9s ease forwards}
+@keyframes word{to{opacity:1;filter:none;transform:none}}
+.name{color:var(--gold);text-shadow:0 0 28px rgba(244,201,93,.45)}
+.orn{margin:.4rem 0 .8rem;color:var(--frost);letter-spacing:.6em;font-size:.9rem;opacity:0}
+.wish{font-size:clamp(1.05rem,3.2vw,1.35rem);line-height:2.15;color:#e1ebf8;min-height:5.2em;display:flex;align-items:center;justify-content:center;opacity:0}
+.card-wrap.show .orn{animation:fade 1s ease 1.9s forwards}
+.card-wrap.show .wish{animation:fade 1.2s ease 2.2s forwards}
+@keyframes fade{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01s!important}
+  .aurora,.shoot{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="sky" aria-hidden="true">
+  <div class="aurora a"></div><div class="aurora b"></div>
+  <div class="stars" id="stars"></div><div class="shoot"></div><div class="moon"></div>
+</div>
+
+<div class="layer l1" aria-hidden="true"><svg viewBox="0 0 1000 400" preserveAspectRatio="xMidYMax slice">
+  <path d="M0 230 L120 120 L210 200 L330 90 L450 210 L560 130 L680 220 L800 110 L920 190 L1000 150 V400 H0Z" fill="#2a3f70"/>
+  <path d="M330 90 L300 128 L330 118 L350 135Z M800 110 L772 146 L800 138 L822 150Z M120 120 L98 148 L122 142 L140 152Z" fill="#cfdcf0"/>
+</svg></div>
+
+<div class="layer l2" aria-hidden="true"><svg viewBox="0 0 1000 400" preserveAspectRatio="xMidYMax slice">
+  <path d="M0 250 Q200 170 420 235 T800 215 T1000 240 V400 H0Z" fill="#a9c0de"/>
+  <g fill="#173452"><polygon points="70,255 100,165 130,255"/><polygon points="82,215 100,145 118,215"/><polygon points="150,265 176,195 202,265"/><polygon points="800,240 830,155 860,240"/><polygon points="812,200 830,135 848,200"/><polygon points="885,252 910,185 935,252"/><polygon points="390,250 414,190 438,250"/></g>
+  <g fill="#eef4fc"><polygon points="100,145 90,175 110,175"/><polygon points="830,135 820,165 840,165"/></g>
+</svg></div>
+
+<div class="layer l3" aria-hidden="true"><svg viewBox="0 0 1000 400" preserveAspectRatio="xMidYMax slice">
+  <path d="M0 290 Q250 220 520 285 T1000 270 V400 H0Z" fill="#e3ecf8"/>
+  <g>
+    <circle class="glow" cx="610" cy="262" r="46" fill="rgba(244,201,93,.28)"/>
+    <rect x="560" y="245" width="100" height="62" fill="#3b2433"/>
+    <polygon points="548,248 610,196 672,248" fill="#f4f8ff"/>
+    <polygon points="548,248 610,196 672,248 662,248 610,206 558,248" fill="#8aa3c6"/>
+    <rect x="636" y="196" width="14" height="30" fill="#4a2f40"/><rect x="633" y="192" width="20" height="7" fill="#f4f8ff"/>
+    <rect class="glow" x="592" y="262" width="26" height="24" rx="2" fill="#f4c95d"/>
+    <path d="M605 262 V286 M592 274 H618" stroke="#7a4b20" stroke-width="2"/>
+    <rect x="626" y="264" width="20" height="43" fill="#241520"/>
+  </g>
+  <g class="smoke" transform="translate(643,190)"><circle r="7"/><circle r="7"/><circle r="7"/></g>
+  <g fill="#0f2a44"><polygon points="470,300 500,222 530,300"/><polygon points="482,262 500,205 518,262"/><polygon points="720,295 745,230 770,295"/></g>
+  <path d="M0 350 Q300 310 620 346 T1000 336 V400 H0Z" fill="#fafcff"/>
+</svg></div>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<div class="stage" id="stage">
+  <div class="env" id="env" role="button" tabindex="0" aria-label="باز کردن کارت پستال">
+    <span class="back"></span>
+    <span class="paper"><b>برای تو</b><i>❄</i></span>
+    <svg class="front" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true">
+      <polygon points="0,0 150,108 0,200" fill="#d3e0f2"/>
+      <polygon points="300,0 150,108 300,200" fill="#dce7f6"/>
+      <polygon points="0,200 150,108 300,200" fill="#e8f0fa"/>
+      <path d="M0 0 L150 108 L300 0 M0 200 L150 108 L300 200" fill="none" stroke="rgba(70,98,148,.3)" stroke-width="1"/>
+    </svg>
+    <svg class="flap" viewBox="0 0 300 108" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfd1e8"/><stop offset="1" stop-color="#cfddf0"/></linearGradient></defs>
+      <polygon points="0,0 300,0 150,108" fill="url(#fg)" stroke="rgba(70,98,148,.3)" stroke-width="1"/>
+    </svg>
+    <span class="seal">❄</span>
+    <span class="tap">برای باز کردن بزن</span>
+  </div>
+</div>
+
+<div class="card-wrap" id="cw">
+  <main class="card" id="card">
+    <div class="stamp" aria-hidden="true"><div><b>دی</b><span>❄</span></div></div>
+    <div class="mark" aria-hidden="true">زمستان</div>
+    <h1 id="title"></h1>
+    <div class="orn" aria-hidden="true">❄ ❄ ❄</div>
+    <p class="wish" id="wish"></p>
+  </main>
+</div>
+
+<audio id="bgm" src="main.mp3" loop preload="auto"></audio>
+<button class="music" id="music" type="button" aria-label="قطع و وصل موسیقی"><i></i><i></i><i></i><i></i></button>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var audio=$('bgm'),mbtn=$('music');
+  var name='';
+  try{name=(new URLSearchParams(location.search).get('name')||'').trim().slice(0,20)}catch(e){}
+
+  var wish='به اندازه‌ی تمام دانه‌های برفی که زمستون می‌باره، برات آرزوهای خوب دارم.';
+
+  function renderTitle(){
+    var who=name||'دی‌ماهی', h=$('title'), d=1.0;
+    h.innerHTML='';
+    var parts=[['<span class="name">'+who.replace(/[<>&"]/g,'')+'</span>'],['جان،'],['تولدت'],['مبارک']];
+    parts.forEach(function(p,i){
+      var s=document.createElement('span');s.className='w';s.innerHTML=p[0];
+      s.style.animationDelay=(reduce?0:(.2+i*.3))+'s';
+      h.appendChild(s);h.appendChild(document.createTextNode(' '));
+      if(i===1)h.appendChild(document.createElement('br'));
+    });
+    document.title=who+' جان، تولدت مبارک';
+  }
+  renderTitle();
+  $('wish').textContent=wish;
+
+  // ستاره‌ها
+  var sh='';for(var i=0;i<70;i++){sh+='<i style="top:'+(Math.random()*60)+'%;left:'+(Math.random()*100)+'%;animation-delay:'+(Math.random()*3)+'s;opacity:'+(.4+Math.random()*.6)+'"></i>'}
+  $('stars').innerHTML=sh;
+
+  // باز کردن پاکت
+  var opened=false,stage=$('stage');
+  $('env').addEventListener('click',function(){
+    if(opened)return;opened=true;
+    stage.classList.add('open');
+    var p=audio.play();mbtn.classList.add('show');
+    if(p&&p.then){p.then(function(){mbtn.classList.add('on')},function(){})}
+    setTimeout(function(){stage.classList.add('gone');$('cw').classList.add('show');burst(innerWidth/2,innerHeight*.4,60)},reduce?0:1700);
+  });
+  $('env').addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click()}});
+  mbtn.addEventListener('click',function(){
+    if(audio.paused){audio.play();mbtn.classList.add('on')}else{audio.pause();mbtn.classList.remove('on')}
+  });
+
+  // برف + جرقه
+  var cv=$('fx'),x=cv.getContext('2d'),flakes=[],sparks=[],W,H,R=Math.min(devicePixelRatio||1,2);
+  function size(){W=cv.width=innerWidth*R;H=cv.height=innerHeight*R}
+  function make(){
+    var n=reduce?0:Math.min(170,Math.floor(innerWidth/7));flakes=[];
+    for(var i=0;i<n;i++){var z=Math.random();flakes.push({x:Math.random()*W,y:Math.random()*H,z:z,r:(.8+z*2.8)*R,s:(.3+z*1.1)*R,d:Math.random()*6.28})}
+  }
+  function burst(px,py,n){
+    if(reduce)return;
+    for(var i=0;i<n;i++){var a=Math.random()*6.28,v=(1+Math.random()*4.5)*R;
+      sparks.push({x:px*R,y:py*R,vx:Math.cos(a)*v,vy:Math.sin(a)*v-1.5*R,l:0,c:Math.random()<.5?'244,201,93':'200,225,255',r:(1+Math.random()*2.2)*R})}
+  }
+  addEventListener('pointerdown',function(e){if(opened&&!e.target.closest('button,input'))burst(e.clientX,e.clientY,22)});
+  function frame(){
+    x.clearRect(0,0,W,H);
+    flakes.forEach(function(f){
+      f.y+=f.s;f.d+=.012;f.x+=Math.sin(f.d)*.5*f.z*R;
+      if(f.y>H+6){f.y=-6;f.x=Math.random()*W}
+      if(f.x<-6)f.x=W+6;if(f.x>W+6)f.x=-6;
+      x.fillStyle='rgba(244,248,255,'+(.35+f.z*.6)+')';x.beginPath();x.arc(f.x,f.y,f.r,0,6.28);x.fill();
+    });
+    for(var i=sparks.length-1;i>=0;i--){
+      var s=sparks[i];s.l++;s.vy+=.08*R;s.vx*=.985;s.x+=s.vx;s.y+=s.vy;
+      var a=1-s.l/70;if(a<=0){sparks.splice(i,1);continue}
+      x.fillStyle='rgba('+s.c+','+a+')';x.shadowColor='rgba('+s.c+',.8)';x.shadowBlur=8*R;
+      x.beginPath();x.arc(s.x,s.y,s.r,0,6.28);x.fill();x.shadowBlur=0;
+    }
+    requestAnimationFrame(frame);
+  }
+  size();make();frame();
+  addEventListener('resize',function(){size();make()});
+})();
+</script>
+</body>
+</html>
